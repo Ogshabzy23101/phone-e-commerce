@@ -2,7 +2,7 @@ import { getStorageItem, getElement, formatPrice, setStorageItem } from "../util
 import { findProduct } from "../store.js";
 import { addToCartDOM } from "../cart/addToCartDom.js";
 
-const cartItemCountDom = getElement('.cart-item-count')
+const cartItemCountDom = [...document.querySelectorAll('.cart-item-count')]
 const cartItemDom = getElement('.cart-items')
 const cartTotalDom = getElement('.cart-total')
 
@@ -23,8 +23,6 @@ const addToCart = (id) => {
   const amount = increaseAmount(id)
   const items = [...cartItemDom.querySelectorAll('.cart-item-amount')]
   const newAmount = items.find((eachItem) => eachItem.dataset.id = id)
-  // const dataId = [...items.dataset.id]
-  console.log(id, items, newAmount);
   newAmount.textContent = amount
 
  }
@@ -42,7 +40,9 @@ function displayCartItemCount() {
   return total += cartItem.amount
 
  }, 0)
- cartItemCountDom.textContent = amount
+ cartItemCountDom.forEach((count) => {
+  count.textContent = amount
+ })
 }
 
 function displayCartTotal() {
@@ -60,7 +60,7 @@ function displayCartItemCountDOM() {
 }
 
 function removeItem(id) {
- cart = cart.filter((cartItem) => cartItem.id !== id);
+ cart = cart.filter((cartItem) => cartItem.id != id);
 }
 
 

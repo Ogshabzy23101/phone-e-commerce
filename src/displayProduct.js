@@ -9,8 +9,9 @@ const display = (items, section) => {
     const { model, price, id } = item;
     return `<div class="col-md-6 col-lg-4">
           <div class="card">
-            <div class="cover" style="background-image: url('./images/bg/${model.replaceAll(' ', '-')}.png')">
+            <div class="cover" >
               <h1>${model}</h1>
+               <img class="each-phone-image" src="./images/bg/${model.replaceAll(' ', '-')}.png" alt="">
               <span class="price" style="color: #f30c23">${formatPrice(price)}</span>
               <div class="card-back">
                 <a href="#" data-id="${id}" 

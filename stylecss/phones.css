@@ -23,6 +23,9 @@ body {
  margin: 10px 0;
  transition: ease all 2.3s;
  perspective: 1200px;
+ background: url(../images/ai-generated-8657275_1280.jpg);
+ background-color: rgba(137, 136, 224, 0.788);
+ background-blend-mode: multiply;
 }
 
 .card:hover .cover {
@@ -55,13 +58,16 @@ body {
  width: 100%;
  transform-style: preserve-3d;
  transition: ease all 2.3s;
- background-size: 150px;
+ background-image: url(../images/waves-circles-109964_1280.jpg);
+ background-size: cover;
  background-position: center;
  background-repeat: no-repeat;
- background-color: #0F2027;
+ background-color: #413f3f5e;
+ background-blend-mode: multiply;
+ display: flex;
+ place-items: center;
  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+0,000000+100&0.65+0,0+100;Neutral+Density */
- /* background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.65) 0%, rgba(0, 0, 0, 0) 100%); */
- background-blend-mode: lighten;
+
  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 
 }
@@ -128,7 +134,11 @@ body {
  font-size: 1.5em;
  transform: translateZ(0px);
 }
-
+.each-phone-image{
+ width: 120px;
+ margin: auto;
+ /* background: url(../images/); */
+}
 .card .card-back {
  position: absolute;
  height: 100%;
@@ -186,6 +196,14 @@ body {
 
 .search-input::placeholder {
  text-transform: capitalize;
+}
+.brands{
+ height: 180px;
+ overflow-y: scroll;
+
+}
+::-webkit-scrollbar{
+ display: none;
 }
 
 .brand-btn {

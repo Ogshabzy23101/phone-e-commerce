@@ -7,7 +7,7 @@ const addToCartDOM = ({ id, model, price, amount }) => {
  article.classList.add("cart-item")
  article.setAttribute('data-id', id)
  article.innerHTML = `<img
-              src="./images/bg/${model.replaceAll(' ','-')}.png"
+              src="./images/bg/${model.replaceAll(' ', '-')}.png"
               class="cart-item-img"
               alt="${model}"
             />
