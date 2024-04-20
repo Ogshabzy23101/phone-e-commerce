@@ -230,7 +230,10 @@ footer {
  text-align: center;
  color: #fff;
 }
-
+.cart-total{
+ color: #f00909;
+ font-size: 1.5em;
+}
 footer a {
  color: #4c4c4c;
 }
