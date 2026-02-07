@@ -103,7 +103,7 @@ This mimics real-world DevOps and team workflows.
 
 👤 Author
 
-Damilola Ogundiran
+Damilola H Ogundiran
 DevOps Engineer
 GitHub: [https://github.com/Ogshabzy23101](https://github.com/Ogshabzy23101)
 
