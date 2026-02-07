@@ -1,11 +1,9 @@
 // all url
-const allMobileUrl = 'https://dummyjson.com/products/category/smartphones'
-// single url
-// const singleMobileUrl = "https://freetestapi.com/api/v1/mobiles/"
-// search url
-// const searchMobileUrl = "https://freetestapi.com/api/v1/mobiles?search=[query]"
-// sort url
-// const sortMobileUrl = "https://freetestapi.com/api/v1/mobiles?sort=name&order=dec"
+
+const allMobileUrl = "https://dummyjson.com/products/category/smartphones";
+
+const singleMobileUrl = "https://dummyjson.com/products/"; 
+
 
 
 const getElement = (selector) => {
@@ -36,4 +34,4 @@ const setStorageItem = (name, item) => {
  localStorage.setItem(name, JSON.stringify(item))
 }
 
-export { getElement, getStorageItem, setStorageItem, formatPrice, allMobileUrl }
+export { getElement, getStorageItem, setStorageItem, formatPrice, allMobileUrl, singleMobileUrl };

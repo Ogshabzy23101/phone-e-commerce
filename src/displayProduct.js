@@ -1,3 +1,5 @@
+import { formatPrice } from "../src/utilit.js";
+
 const display = (items, section) => {
   section.innerHTML = items
     .map((item) => {
@@ -26,3 +28,5 @@ const display = (items, section) => {
     if (id) addToCart(parseInt(id));
   });
 };
+
+export { display };

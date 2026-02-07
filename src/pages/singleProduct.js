@@ -1,100 +1,109 @@
 import "../cart/setupCart.js";
-
-
 import { addToCart } from "../cart/setupCart.js";
 import { singleMobileUrl, getElement, formatPrice } from "../utilit.js";
 
+const descriptionDOM = getElement(".phone-desc-paragraph");
+const titleDOM = getElement(".phone-title-head");
+const modelDOM = getElement(".phone-title-head2");
+const yearDOM = getElement(".phone-title-year");
+const priceDOM = getElement(".price");
 
-const descriptionDOM = getElement('.phone-desc-paragraph')
-const titleDOM = getElement('.phone-title-head')
-const modelDOM = getElement('.phone-title-head2')
-const yearDOM = getElement('.phone-title-year')
-const priceDOM = getElement('.price')
-const displayDOM = getElement('.phone-display')
-const processorDOM = getElement('.phone-processor')
-const batteryDOM = getElement('.phone-ba3')
-const ramDOM = getElement('.phone-ram')
-const storageDOM = getElement('.phone-storage')
-const resolutionDOM = getElement('.phone-resolution')
-const colorDOM = getElement('.variant')
-const CenterDOM = getElement('.pro-container')
-const CartBtn = getElement('.add-cart')
-const image = getElement('.photo-main-image')
+// These may not exist in DummyJSON; we’ll fill what we can safely
+const displayDOM = getElement(".phone-display");
+const processorDOM = getElement(".phone-processor");
+const batteryDOM = getElement(".phone-ba3");
+const ramDOM = getElement(".phone-ram");
+const storageDOM = getElement(".phone-storage");
+const resolutionDOM = getElement(".phone-resolution");
 
-
-
-
-
+const colorDOM = getElement(".variant");
+const CenterDOM = getElement(".pro-container");
+const CartBtn = getElement(".add-cart");
+const image = getElement(".photo-main-image");
 
 let productId;
 
-window.addEventListener('DOMContentLoaded', async () => {
-  const urlsearch = new URLSearchParams(window.location.search)
-  const urlId = urlsearch.get('id')
-  try {
-    const response = await fetch(`${singleMobileUrl}${urlId}`)
-    if (response.status >= 200 && response.status <= 299) {
-      const products = await response.json()
-      const { battery_capacity, brand,
-        camera_setup, colors, description,
-        display_size,
-        model,
-        price
-        ,
-        processor,
-        ram,
-        release_year,
-        resolution, storage, id
-      } = products
-      productId = id
-      descriptionDOM.innerHTML = `${description}`
-      titleDOM.textContent = `${brand}`
-      modelDOM.textContent = `${model}`
-      yearDOM.textContent = `Year: ${release_year}`
-      priceDOM.textContent = `${formatPrice(price)}`
-      displayDOM.innerHTML = `<span>Display size:</span> ${display_size}`
-      processorDOM.innerHTML = `<span>Processor :</span> ${processor}`
-      batteryDOM.innerHTML = `<span>Battery capacity :</span>${battery_capacity}`
-      ramDOM.innerHTML = `<span>Ram size:</span> ${ram}`
-      storageDOM.innerHTML = `<span>Storage size:</span> ${storage}`
-      resolutionDOM.innerHTML = `<span>resolution:</span> ${resolution}`
-      image.src = `./images/bg/${model.replaceAll(' ', '-')}.png`
-      CartBtn.setAttribute('data-id', `${productId}`);
+window.addEventListener("DOMContentLoaded", async () => {
+  const params = new URLSearchParams(window.location.search);
+  const urlId = params.get("id");
 
-      colors.forEach((color) => {
-        const list = document.createElement('li');
-        list.classList.add('product-color');
-        list.textContent = color
-        colorDOM.appendChild(list);
-      });
-
-
-
-
-
-    } else {
-      console.log(response.status, response.statusText);
-      CenterDOM.innerHTML = `
-    <div>
-    <h3 class="error">sorry, something went wrong</h3>
-    <a href="index.html" class="btn">back home</a>
-    </div> 
-     `;
-    }
-
-
-
-
-
-
-
-  } catch (error) {
-    console.log(error);
+  if (!urlId) {
+    CenterDOM.innerHTML = `
+      <div>
+        <h3 class="error">Missing product id</h3>
+        <a href="phones.html" class="btn">back to phones</a>
+      </div>`;
+    return;
   }
 
-})
+  try {
+    const response = await fetch(`${singleMobileUrl}${urlId}`);
 
-CartBtn.addEventListener('click', function () {
-  console.log(productId);
+    if (!response.ok) {
+      CenterDOM.innerHTML = `
+        <div>
+          <h3 class="error">sorry, something went wrong</h3>
+          <a href="phones.html" class="btn">back to phones</a>
+        </div>`;
+      return;
+    }
+
+    const product = await response.json();
+
+    // ✅ DummyJSON fields
+    const {
+      id,
+      title,
+      brand,
+      description,
+      price,
+      thumbnail,
+      images,
+      rating,
+    } = product;
+
+    productId = id;
+
+    // Fill DOM
+    descriptionDOM.textContent = description ?? "";
+    titleDOM.textContent = brand ?? "";
+    modelDOM.textContent = title ?? "";
+    yearDOM.textContent = ""; // DummyJSON doesn’t provide release year
+    priceDOM.textContent = formatPrice(price ?? 0);
+
+    // Use API image
+    image.src = thumbnail || (images && images[0]) || "";
+    image.alt = title || "phone";
+
+    // Optional fields (since DummyJSON doesn’t have your specs)
+    displayDOM.innerHTML = `<span>Rating:</span> ${rating ?? "N/A"}`;
+    processorDOM.innerHTML = `<span>Brand:</span> ${brand ?? "N/A"}`;
+
+    // Clear the rest or show N/A
+    batteryDOM.innerHTML = `<span>Battery capacity:</span> N/A`;
+    ramDOM.innerHTML = `<span>RAM size:</span> N/A`;
+    storageDOM.innerHTML = `<span>Storage size:</span> N/A`;
+    resolutionDOM.innerHTML = `<span>Resolution:</span> N/A`;
+
+    // Colors not available — show a default
+    colorDOM.innerHTML = "";
+    const li = document.createElement("li");
+    li.classList.add("product-color");
+    li.textContent = "N/A";
+    colorDOM.appendChild(li);
+
+    // Set cart button id
+    CartBtn.setAttribute("data-id", `${productId}`);
+  } catch (error) {
+    console.error(error);
+    CenterDOM.innerHTML = `
+      <div>
+        <h3 class="error">Network error</h3>
+        <a href="phones.html" class="btn-back">back</a>
+      </div>`;
+  }
+});
+
+CartBtn.addEventListener("click", function () {
   addToCart(productId);
 });
