@@ -12,8 +12,6 @@
     display: flex;
     place-content: end;
   }
-
-
 }
 
 @media screen and (min-width: 450px) {
@@ -65,7 +63,6 @@
 
   .product {
     background-color: transparent !important;
-
   }
 
   .product__photo {
@@ -78,7 +75,6 @@
     /* z-index: -1; */
     display: flex;
     place-content: center;
-
   }
 
   .product__info article {
@@ -89,9 +85,7 @@
   .brands {
     height: 300px;
     overflow-y: scroll;
-
   }
-
 }
 
 @media screen and (min-width: 992px) {
@@ -138,7 +132,6 @@
     margin-left: 200px;
   }
 
-
   .cart-btn-container {
     position: relative;
     display: none;
@@ -154,16 +147,13 @@
 
   .pro-container {
     width: 80%;
-
   }
 
   .cart-item-count {
     top: -0.85rem;
     left: -0.85rem;
   }
-
 }
-
 
 @media screen and (min-width: 1199px) {
   .our-phone-row-text {
