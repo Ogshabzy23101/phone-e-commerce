@@ -1,4 +1,4 @@
-📱 Phone E-Commerce Website
+# 📱 Phone E-Commerce Website
 
 A simple front-end phone e-commerce application built with HTML, CSS, and JavaScript, showcasing product listing, filtering, and cart functionality.
 This project also demonstrates modern DevOps practices using GitHub Actions for Continuous Integration (CI).
@@ -69,7 +69,7 @@ If any check fails, the pull request is blocked from merging.
 
 1️⃣ Clone the repository
 
-git clone https://github.com/ogshabzy23101/phone-e-commerce.git
+git clone <https://github.com/ogshabzy23101/phone-e-commerce.git>
 cd phone-e-commerce
 
 2️⃣ Install dependencies
@@ -105,7 +105,7 @@ This mimics real-world DevOps and team workflows.
 
 Damilola Ogundiran
 Aspiring DevOps Engineer
-GitHub: https://github.com/Ogshabzy23101
+GitHub: [https://github.com/Ogshabzy23101](https://github.com/Ogshabzy23101)
 
 ⸻
 
