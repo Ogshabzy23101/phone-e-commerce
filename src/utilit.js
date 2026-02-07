@@ -36,4 +36,4 @@ const setStorageItem = (name, item) => {
  localStorage.setItem(name, JSON.stringify(item))
 }
 
-export { getElement, getStorageItem, setStorageItem, formatPrice, allMobileUrl, singleMobileUrl, }
+export { getElement, getStorageItem, setStorageItem, formatPrice, allMobileUrl }

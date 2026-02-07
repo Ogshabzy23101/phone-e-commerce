@@ -1,47 +1,35 @@
 import { setStorageItem, getStorageItem } from "../src/utilit.js";
 
-let store = getStorageItem('store')
+let store = getStorageItem("store");
 
 const setUpStore = (products) => {
  store = products.map((product) => {
   const {
-   battery_capacity,
-   brand,
-   camera_setup, colors,
-   description,
-   display_size,
    id,
-   image,
-   model,
+   title,
+   brand,
    price,
-   processor,
-   ram, ratings,
-   release_year,
-   resolution,
-   storage } = product
+   description,
+   rating,
+   thumbnail,
+   images,
+  } = product;
 
   return {
-   battery_capacity,
+   id,
+   model: title,          // ✅ your UI expects "model"
    brand,
-   camera_setup, colors,
-   description,
-   display_size, id,
-   image,
-   model,
    price,
-   processor,
-   ram, ratings,
-   release_year,
-   resolution,
-   storage
-  }
- })
- setStorageItem('store', store)
+   description,
+   ratings: rating,       // ✅ keep your naming if used elsewhere
+   image: thumbnail,      // ✅ your old code expects "image"
+   images,                // optional
+  };
+ });
 
-}
+ setStorageItem("store", store);
+};
 
-const findProduct = (id) => {
- let products = store.find((product) => product.id === id)
- return products
-}
-export {store, setUpStore, findProduct}
+const findProduct = (id) => store.find((p) => p.id === id);
+
+export { store, setUpStore, findProduct };
