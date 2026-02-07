@@ -1,4 +1,5 @@
 import { formatPrice } from "../src/utilit.js";
+import { addToCart } from "./cart/setupCart.js";
 
 const display = (items, section) => {
   section.innerHTML = items

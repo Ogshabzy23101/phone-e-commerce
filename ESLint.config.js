@@ -1,7 +1,13 @@
+import globals from "globals";
+
 export default [
   {
     files: ["**/*.js"],
-    ignores: ["node_modules/**"],
+    languageOptions: {
+      globals: {
+        ...globals.browser, 
+      },
+    },
     rules: {
       "no-unused-vars": "warn",
       "no-undef": "error",
