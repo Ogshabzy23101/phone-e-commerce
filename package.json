@@ -1,5 +1,4 @@
 {
-  
   "name": "phone-e-commerce",
   "private": true,
   "version": "1.0.0",
@@ -13,6 +12,4 @@
     "eslint": "^9.0.0",
     "prettier": "^3.0.0"
   }
-
-  
 }
