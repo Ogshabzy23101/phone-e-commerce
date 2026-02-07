@@ -51,16 +51,8 @@ window.addEventListener("DOMContentLoaded", async () => {
     const product = await response.json();
 
     // ✅ DummyJSON fields
-    const {
-      id,
-      title,
-      brand,
-      description,
-      price,
-      thumbnail,
-      images,
-      rating,
-    } = product;
+    const { id, title, brand, description, price, thumbnail, images, rating } =
+      product;
 
     productId = id;
 
