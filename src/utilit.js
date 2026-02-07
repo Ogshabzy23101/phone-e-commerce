@@ -1,7 +1,7 @@
 // all url
-const allMobileUrl = 'https://freetestapi.com/api/v1/mobiles'
+const allMobileUrl = 'https://dummyjson.com/products/category/smartphones'
 // single url
-const singleMobileUrl = "https://freetestapi.com/api/v1/mobiles/"
+// const singleMobileUrl = "https://freetestapi.com/api/v1/mobiles/"
 // search url
 // const searchMobileUrl = "https://freetestapi.com/api/v1/mobiles?search=[query]"
 // sort url

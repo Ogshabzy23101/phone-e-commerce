@@ -1,11 +1,15 @@
-import { getElement, allMobileUrl, singleMobileUrl } from '../src/utilit.js';
- 
-const fetchProduct =async () => {
- const response = await fetch(allMobileUrl).catch((err) => console.log(err));
- if (response) {
-  return response.json()
- }
- return response
-}
+import { allMobileUrl } from "../src/utilit.js";
 
-export {fetchProduct}
+const fetchProduct = async () => {
+ try {
+  const response = await fetch(allMobileUrl);
+  if (!response.ok) throw new Error(`HTTP ${response.status}`);
+  const data = await response.json();
+  return data.products; // ✅ return array
+ } catch (err) {
+  console.error("Fetch failed:", err);
+  return [];
+ }
+};
+
+export { fetchProduct };
