@@ -104,7 +104,7 @@ This mimics real-world DevOps and team workflows.
 👤 Author
 
 Damilola Ogundiran
-Aspiring DevOps Engineer
+DevOps Engineer
 GitHub: [https://github.com/Ogshabzy23101](https://github.com/Ogshabzy23101)
 
 ⸻
