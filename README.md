@@ -1,9 +1,7 @@
-# 📱 Phone E-Commerce Website
+# Phone E-Commerce Website
 
 A simple front-end phone e-commerce application built with HTML, CSS, and JavaScript, showcasing product listing, filtering, and cart functionality.
 This project also demonstrates modern DevOps practices using GitHub Actions for Continuous Integration (CI).
-
-⸻
 
 🚀 Features
 • Browse phone products
@@ -12,8 +10,6 @@ This project also demonstrates modern DevOps practices using GitHub Actions for 
 • Add products to cart
 • Responsive UI for mobile and desktop
 • Code quality checks with CI
-
-⸻
 
 🛠️ Tech Stack
 
@@ -28,8 +24,6 @@ Tooling & DevOps
 • Prettier – code formatting
 • ESLint – JavaScript linting
 • Node.js – tooling support (dev only)
-
-⸻
 
 📂 Project Structure
 
@@ -49,9 +43,7 @@ phone-e-commerce/
 ├── eslint.config.js
 └── README.md
 
-⸻
-
-✅ Continuous Integration (CI)
+Continuous Integration (CI)
 
 This project uses GitHub Actions to enforce code quality.
 
@@ -63,52 +55,42 @@ The CI pipeline runs automatically on every pull request to main and performs:
 
 If any check fails, the pull request is blocked from merging.
 
-⸻
+Running Locally
 
-🧪 Running Locally
-
-1️⃣ Clone the repository
+Clone the repository
 
 git clone <https://github.com/ogshabzy23101/phone-e-commerce.git>
 cd phone-e-commerce
 
-2️⃣ Install dependencies
+Install dependencies
 
 npm install
 
-3️⃣ Run formatting check
+Run formatting check
 
 npm run format:check
 
-4️⃣ Run linting
+Run linting
 
 npm run lint
 
-⸻
-
-🧩 Development Workflow 1. Create a feature branch 2. Make changes 3. Commit and push 4. Open a Pull Request 5. CI runs automatically 6. Merge after checks pass
+Development Workflow 1. Create a feature branch 2. Make changes 3. Commit and push 4. Open a Pull Request 5. CI runs automatically 6. Merge after checks pass
 
 This mimics real-world DevOps and team workflows.
 
-⸻
-
-📈 Future Improvements
+Future Improvements
 • Add deployment workflow (GitHub Pages / Netlify)
 • Dockerize the application
 • Add unit tests
 • Backend integration
 • CI/CD with cloud infrastructure
 
-⸻
-
-👤 Author
+Author
 
 Damilola H Ogundiran
 DevOps Engineer
 GitHub: [https://github.com/Ogshabzy23101](https://github.com/Ogshabzy23101)
 
-⸻
-
-📄 License
+License
 
 This project is for learning and demonstration purposes.
