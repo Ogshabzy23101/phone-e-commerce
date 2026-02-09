@@ -67,24 +67,20 @@ window.addEventListener("DOMContentLoaded", async () => {
     image.src = thumbnail || (images && images[0]) || "";
     image.alt = title || "phone";
 
-    
     displayDOM.innerHTML = `<span>Rating:</span> ${rating ?? "N/A"}`;
     processorDOM.innerHTML = `<span>Brand:</span> ${brand ?? "N/A"}`;
 
-    
     batteryDOM.innerHTML = `<span>Battery capacity:</span> N/A`;
     ramDOM.innerHTML = `<span>RAM size:</span> N/A`;
     storageDOM.innerHTML = `<span>Storage size:</span> N/A`;
     resolutionDOM.innerHTML = `<span>Resolution:</span> N/A`;
 
-    
     colorDOM.innerHTML = "";
     const li = document.createElement("li");
     li.classList.add("product-color");
     li.textContent = "N/A";
     colorDOM.appendChild(li);
 
-    
     CartBtn.setAttribute("data-id", `${productId}`);
   } catch (error) {
     console.error(error);

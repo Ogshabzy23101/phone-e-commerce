@@ -9,13 +9,13 @@ const setUpStore = (products) => {
 
     return {
       id,
-      model: title, 
+      model: title,
       brand,
       price,
       description,
       ratings: rating,
-      image: thumbnail, 
-      images, 
+      image: thumbnail,
+      images,
     };
   });
 
