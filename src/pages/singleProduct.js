@@ -50,7 +50,7 @@ window.addEventListener("DOMContentLoaded", async () => {
 
     const product = await response.json();
 
-    // ✅ DummyJSON fields
+    // DummyJSON fields
     const { id, title, brand, description, price, thumbnail, images, rating } =
       product;
 
@@ -67,24 +67,24 @@ window.addEventListener("DOMContentLoaded", async () => {
     image.src = thumbnail || (images && images[0]) || "";
     image.alt = title || "phone";
 
-    // Optional fields (since DummyJSON doesn’t have your specs)
+    
     displayDOM.innerHTML = `<span>Rating:</span> ${rating ?? "N/A"}`;
     processorDOM.innerHTML = `<span>Brand:</span> ${brand ?? "N/A"}`;
 
-    // Clear the rest or show N/A
+    
     batteryDOM.innerHTML = `<span>Battery capacity:</span> N/A`;
     ramDOM.innerHTML = `<span>RAM size:</span> N/A`;
     storageDOM.innerHTML = `<span>Storage size:</span> N/A`;
     resolutionDOM.innerHTML = `<span>Resolution:</span> N/A`;
 
-    // Colors not available — show a default
+    
     colorDOM.innerHTML = "";
     const li = document.createElement("li");
     li.classList.add("product-color");
     li.textContent = "N/A";
     colorDOM.appendChild(li);
 
-    // Set cart button id
+    
     CartBtn.setAttribute("data-id", `${productId}`);
   } catch (error) {
     console.error(error);

@@ -9,13 +9,13 @@ const setUpStore = (products) => {
 
     return {
       id,
-      model: title, // ✅ your UI expects "model"
+      model: title, 
       brand,
       price,
       description,
-      ratings: rating, // ✅ keep your naming if used elsewhere
-      image: thumbnail, // ✅ your old code expects "image"
-      images, // optional
+      ratings: rating,
+      image: thumbnail, 
+      images, 
     };
   });
 
